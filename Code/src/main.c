@@ -15,7 +15,7 @@ int main(void)
 	SPI1_Init();	
 	SSD1306_Init();				
 	char LastNumber = 0;
-	bool Choose_Rectangle = false;
+	bool Mode_Rectangle = false;
 	uint8_t SelNum = 0;
 	bool Pressed = false;
 	uint8_t Iteration = 0;
@@ -51,9 +51,7 @@ int main(void)
 			Iteration = 0;
 			disp1color_FillScreenbuff(0);
 				
-			
-				
-			/*Втоая страница
+						
 			disp1color_printf(0, 1, FONTID_6X8M,  "               Т: 32.53%d %cC\n\r",  LastNumber, 0x80);
 			
 			disp1color_DrawLine(0, 10, 127, 10);
@@ -63,21 +61,32 @@ int main(void)
 													"          R4: 1.000004 Ом\n\r"
 													"          R5: 10.01044 Ом");
 				
-			if(Choose_Rectangle)
-				disp1color_DrawRectangle(SEL_RECT_L - 1, SEL_RECT_T - 1 + SelNum*9, SEL_RECT_L + 3, SEL_RECT_T + 3 + SelNum*9);	
-			else
-				disp1color_DrawRectangle(SEL_RECT_L, SEL_RECT_T + SelNum*9, SEL_RECT_L + 2, SEL_RECT_T + 2 + SelNum*9);
+			
+			disp1color_DrawRectangle(SEL_RECT_L, SEL_RECT_T + SelNum*9, SEL_RECT_L + 4, SEL_RECT_T + 2 + SelNum*9);
 
-			Choose_Rectangle = !Choose_Rectangle;
+			if(Mode_Rectangle)
+				disp1color_DrawRectangle(MODE_RECT_L - 1, MODE_RECT_T - 1, MODE_RECT_L + 3, MODE_RECT_T + 3);	
+			else
+				disp1color_DrawRectangle(MODE_RECT_L, MODE_RECT_T, MODE_RECT_L + 2, MODE_RECT_T + 2);
+
+
+			disp1color_printf(118, 1, FONTID_6X8M, "%c", 0x81);
+
+			Mode_Rectangle = !Mode_Rectangle;
 
 			disp1color_UpdateFromBuff();
 				
 			if(++LastNumber >= 10)
 				LastNumber = 0;
 
-			*/
-
+			
+			/*
 			disp1color_printf(0, 1, FONTID_6X8M,  "             Готов  к  работе\n\r");
+			disp1color_printf(118, 1, FONTID_6X8M, "%c", 0x81);
+
+			//disp1color_printf(0, 1, FONTID_6X8M,  "             Выход  на  режим\n\r");
+			//disp1color_printf(118, 1, FONTID_6X8M, "x");
+
 			disp1color_DrawLine(0, 10, 127, 10);
 			disp1color_printf(28, 23, FONTID_10X16F, "32.537 %cC", 0x80);
 			disp1color_DrawLine(0, 54, 127, 54);
@@ -92,13 +101,13 @@ int main(void)
 			disp1color_DrawLine(36, 63, 38, 61);
 			disp1color_DrawLine(37, 61, 35, 61);
 
-			if(Choose_Rectangle)
+			if(Mode_Rectangle)
 				disp1color_DrawRectangle(MODE_RECT_L - 1, MODE_RECT_T - 1, MODE_RECT_L + 3, MODE_RECT_T + 3);	
 			else
 				disp1color_DrawRectangle(MODE_RECT_L, MODE_RECT_T, MODE_RECT_L + 2, MODE_RECT_T + 2);
 			disp1color_UpdateFromBuff();
 
-			Choose_Rectangle = !Choose_Rectangle;
+			Mode_Rectangle = !Mode_Rectangle;*/
 
 		}	
 		else

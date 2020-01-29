@@ -11,7 +11,7 @@
 #include "font.h"
 
 
-#define SEL_RECT_L               13
+#define SEL_RECT_L               10
 #define SEL_RECT_T                16
 #define MODE_RECT_L               3
 #define MODE_RECT_T                3
