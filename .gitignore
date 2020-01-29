@@ -1,0 +1,6 @@
+*.txt
+Objects/*
+Listings/*
+*.uvguix
+*.uvoptx
+*.uvprojx

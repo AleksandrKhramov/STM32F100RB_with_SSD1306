@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "*.ipp": "cpp",
+        "xlocale": "cpp",
+        "array": "c",
+        "vector": "c",
+        "xstring": "c",
+        "ssd1306.h": "c",
+        "main.h": "c",
+        "disp1color.h": "c",
+        "f6x8m.h": "c",
+        "font.h": "c",
+        "f10x16f.h": "c"
+    }
+}
